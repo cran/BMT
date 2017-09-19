@@ -1,0 +1,13 @@
+#' @name score.math.booklet10.PISA2012
+#' @docType data
+#' @title A Performance Score in Mathematics from Booklet 10 of PISA 2012.
+#' @description Classic performance score in mathematics, using the students responses to Booklet 10 of the PISA test applied in 2012. We use the answers to the PISA 2012 questionnaire. We take the ``Scored cognitive item response data file.''. We keep all the questions with binary score (correct and incorrect) and exclude those that could be scored with partial credit. Then, we recode the responses: 1 for correct and 0 for incorrect. Finally, we obtain the percentage of correct answers, i.e., the classic performance score of each student. It is important to mention that the reported scores of PISA 2012 are estimated and scaled using the Rasch model of item response theory. On the other hand, all booklets for the test could have different: number of questions, traits evaluated, and participating countries. Also, the assignation of a booklet to a student is randomized. Considering that, we choose only one arbitrary booklet, Booklet 10, and its questions of mathematics.
+#' @usage data(score.math.booklet10.PISA2012)
+#' @format \code{score.math.booklet10.PISA2012} is a vector.
+#' @source OECD Programme for International Student Assesment (PISA) (2012). Database -
+#' PISA 2012. Online; accessed 2014-08-23. 
+#' \url{https://www.oecd.org/pisa/pisaproducts/pisa2012database-downloadabledata.htm}.
+#' @author Camilo Jose Torres-Jimenez [aut,cre] \email{cjtorresj@unal.edu.co}
+#' @keywords datasets
+NULL
+
