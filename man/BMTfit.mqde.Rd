@@ -6,18 +6,28 @@
  Data.}
 \source{
 Based on the function \code{\link{mqdedist}} which in turn is based on
- the function \code{\link{mledist}} of the R package: 
- \code{\link{fitdistrplus}}
+ the function \code{\link[fitdistrplus]{mledist}} of the R package: 
+ \pkg{fitdistrplus}
  
  Delignette-Muller ML and Dutang C (2015), \emph{fitdistrplus: An R Package 
  for Fitting Distributions}. Journal of Statistical Software, 64(4), 1-34.
 }
 \usage{
-BMTfit.mqde(data, probs = (1:length(data) - 0.5)/length(data), qtype = 5,
-  dist = "euclidean", start = list(p3 = 0.5, p4 = 0.5, p1 = min(data) - 0.1,
-  p2 = max(data) + 0.1), fix.arg = NULL, type.p.3.4 = "t w",
-  type.p.1.2 = "c-d", optim.method = "Nelder-Mead", custom.optim = NULL,
-  weights = NULL, silent = TRUE, ...)
+BMTfit.mqde(
+  data,
+  probs = (1:length(data) - 0.5)/length(data),
+  qtype = 5,
+  dist = "euclidean",
+  start = list(p3 = 0.5, p4 = 0.5, p1 = min(data) - 0.1, p2 = max(data) + 0.1),
+  fix.arg = NULL,
+  type.p.3.4 = "t w",
+  type.p.1.2 = "c-d",
+  optim.method = "Nelder-Mead",
+  custom.optim = NULL,
+  weights = NULL,
+  silent = TRUE,
+  ...
+)
 }
 \arguments{
 \item{data}{A numeric vector with the observed values for non-censored data.}
@@ -37,36 +47,36 @@ be used. This must be one of "euclidean" (default), "maximum", or
 \item{start}{A named list giving the initial values of parameters of the BMT 
 distribution or a function of data computing initial values and returning a 
 named list. (see the 'details' section of 
-\code{\link{mledist}}).}
+\code{\link[fitdistrplus]{mledist}}).}
 
 \item{fix.arg}{An optional named list giving the values of fixed parameters of
 the BMT distribution or a function of data computing (fixed) parameter 
 values and returning a named list. Parameters with fixed value are thus NOT 
 estimated. (see the 'details' section of 
-\code{\link{mledist}}).}
+\code{\link[fitdistrplus]{mledist}}).}
 
-\item{type.p.3.4}{Type of parametrization asociated to p3 and p4. "t w" means 
+\item{type.p.3.4}{Type of parametrization associated to p3 and p4. "t w" means 
 tails weights parametrization (default) and "a-s" means asymmetry-steepness 
 parametrization.}
 
-\item{type.p.1.2}{Type of parametrization asociated to p1 and p2. "c-d" means 
+\item{type.p.1.2}{Type of parametrization associated to p1 and p2. "c-d" means 
 domain parametrization (default) and "l-s" means location-scale 
 parametrization.}
 
 \item{optim.method}{\code{"default"} (see the 'details' section of 
-\code{\link{mledist}}) or optimization method to pass to 
+\code{\link[fitdistrplus]{mledist}}) or optimization method to pass to 
 \code{\link{optim}}. Given the close-form expression of the quantile 
 function, two optimization methods were added when the euclidean distance is
 selected: Coordinate descend (\code{"CD"}) and Newton-Rhapson (\code{"NR"}).}
 
 \item{custom.optim}{A function carrying the optimization (see the 'details' 
-section of \code{\link{mledist}}).}
+section of \code{\link[fitdistrplus]{mledist}}).}
 
 \item{weights}{an optional vector of weights to be used in the fitting process. 
 Should be \code{NULL} or a numeric vector with strictly positive numbers. 
 If non-\code{NULL}, weighted mqde is used, otherwise ordinary mqde.}
 
-\item{silent}{A logical to remove or show warnings when bootstraping.}
+\item{silent}{A logical to remove or show warnings when bootstrapping.}
 
 \item{\dots}{Further arguments to be passed to generic functions or to the 
 function \code{"mqdedist"}. See \code{\link{mqdedist}} for details.}
@@ -118,7 +128,7 @@ function \code{"mqdedist"}. See \code{\link{mqdedist}} for details.}
  \item{fix.arg.fun}{the function used to set the value of \code{fix.arg} or 
  \code{NULL}.}
  
- \item{weights}{the vector of weigths used in the estimation process or 
+ \item{weights}{the vector of weights used in the estimation process or 
  \code{NULL}.}
  
  \item{counts}{A two-element integer vector giving the number of calls to the
@@ -194,8 +204,8 @@ See \code{\link{BMT}} for the BMT density, distribution, quantile
  \code{\link{BMTfit.mle}}, \code{\link{BMTfit.mge}}, 
  \code{\link{BMTfit.mpse}} and \code{\link{BMTfit.qme}} for other estimation 
  methods. See \code{\link{optim}} and \code{\link{constrOptim}} for 
- optimization routines. See \code{\link{BMTfit}} and \code{\link{fitdist}} 
- for functions that return an objetc of class \code{"fitdist"}.
+ optimization routines. See \code{\link{BMTfit}} and \code{\link[fitdistrplus]{fitdist}} 
+ for functions that return an object of class \code{"fitdist"}.
 }
 \author{
 Camilo Jose Torres-Jimenez [aut,cre] \email{cjtorresj@unal.edu.co}

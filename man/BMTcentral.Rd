@@ -9,8 +9,7 @@
 \usage{
 BMTmean(p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d")
 
-BMTmedian(p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1,
-  type.p.1.2 = "c-d")
+BMTmedian(p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d")
 
 BMTmode(p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d")
 }
@@ -19,14 +18,14 @@ BMTmode(p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d")
 asymmetry-steepness (\eqn{\zeta} and \eqn{\xi}) parameters of the BMT 
 distribution.}
 
-\item{type.p.3.4}{type of parametrization asociated to p3 and p4. "t w" means
+\item{type.p.3.4}{type of parametrization associated to p3 and p4. "t w" means
 tails weights parametrization (default) and "a-s" means asymmetry-steepness
 parametrization.}
 
 \item{p1, p2}{domain (minimum and maximum) or location-scale (mean and 
-standard deviation) parameters of the BMT ditribution.}
+standard deviation) parameters of the BMT distribution.}
 
-\item{type.p.1.2}{type of parametrization asociated to p1 and p2. "c-d" means
+\item{type.p.1.2}{type of parametrization associated to p1 and p2. "c-d" means
 domain parametrization (default) and "l-s" means location-scale 
 parametrization.}
 }
@@ -91,7 +90,7 @@ BMTmode(0.5, 0.5, "a-s", 0, 1, "l-s")
 \references{
 Torres-Jimenez, C. J. and Montenegro-Diaz, A. M. (2017, September), 
   \emph{An alternative to continuous univariate distributions supported on a 
-  bounded interval: The BMT distribution}. ArXiv e-prints.
+  bounded interval: The BMT distribution}. ArXiv e-prints. \url{https://arxiv.org/abs/1709.05534}.
   
   Torres-Jimenez, C. J. (2018), \emph{The BMT Item Response Theory model: A 
   new skewed distribution family with bounded domain and an IRT model based 

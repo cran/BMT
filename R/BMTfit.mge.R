@@ -4,17 +4,16 @@
 #'@description Fit of the BMT distribution to non-censored data by maximum 
 #'  goodness-of-fit estimation (mge), also known as minimum distance estimation.
 #'  
-#'@rdname BMTfit.mge
 #'@name BMTfit.mge
 #'  
 #'@details This function is not intended to be called directly but is internally
 #'  called in \code{\link{BMTfit}} when used with the maximum goodness-of-fit 
 #'  method.
 #'  
-#'  \code{BMTfit.mge} is based on the function \code{\link{mgedist}} but it 
+#'  \code{BMTfit.mge} is based on the function \code{\link[fitdistrplus]{mgedist}} but it 
 #'  focuses on the maximum goodness-of-fit parameter estimation for the BMT 
 #'  distribution (see \code{\link{BMT}} for details about the BMT distribution 
-#'  and \code{\link{mgedist}} for details about maximum goodness-of-fit fit of 
+#'  and \code{\link[fitdistrplus]{mgedist}} for details about maximum goodness-of-fit fit of 
 #'  univariate distributions).
 #'  
 #'@param data A numeric vector with the observed values for non-censored data.
@@ -26,26 +25,26 @@
 #'@param start A named list giving the initial values of parameters of the BMT 
 #'  distribution or a function of data computing initial values and returning a 
 #'  named list. (see the 'details' section of 
-#'  \code{\link{mledist}}).
+#'  \code{\link[fitdistrplus]{mledist}}).
 #'@param fix.arg An optional named list giving the values of fixed parameters of
 #'  the BMT distribution or a function of data computing (fixed) parameter 
 #'  values and returning a named list. Parameters with fixed value are thus NOT 
 #'  estimated. (see the 'details' section of 
-#'  \code{\link{mledist}}).
-#'@param type.p.3.4 Type of parametrization asociated to p3 and p4. "t w" means 
+#'  \code{\link[fitdistrplus]{mledist}}).
+#'@param type.p.3.4 Type of parametrization associated to p3 and p4. "t w" means 
 #'  tails weights parametrization (default) and "a-s" means asymmetry-steepness 
 #'  parametrization.
-#'@param type.p.1.2 Type of parametrization asociated to p1 and p2. "c-d" means 
+#'@param type.p.1.2 Type of parametrization associated to p1 and p2. "c-d" means 
 #'  domain parametrization (default) and "l-s" means location-scale 
 #'  parametrization.
 #'@param optim.method \code{"default"} (see the 'details' section of 
-#'  \code{\link{mledist}}) or optimization method to pass to 
+#'  \code{\link[fitdistrplus]{mledist}}) or optimization method to pass to 
 #'  \code{\link{optim}}.
 #'@param custom.optim A function carrying the optimization (see the 'details' 
-#'  section of \code{\link{mledist}}).
-#'@param silent A logical to remove or show warnings when bootstraping.
+#'  section of \code{\link[fitdistrplus]{mledist}}).
+#'@param silent A logical to remove or show warnings when bootstrapping.
 #'@param \dots Further arguments to be passed to generic functions or to the 
-#'  function \code{"mgedist"}. See \code{\link{mgedist}} for details.
+#'  function \code{"mgedist"}. See \code{\link[fitdistrplus]{mgedist}} for details.
 #'  
 #'@return \code{BMTfit.mge} returns a list with following components,
 #'  
@@ -89,7 +88,7 @@
 #'  \item{fix.arg.fun}{the function used to set the value of \code{fix.arg} or 
 #'  \code{NULL}.}
 #'  
-#'  \item{weights}{the vector of weigths used in the estimation process or 
+#'  \item{weights}{the vector of weights used in the estimation process or 
 #'  \code{NULL}.}
 #'  
 #'  \item{counts}{A two-element integer vector giving the number of calls to the
@@ -116,13 +115,13 @@
 #'  \code{\link{BMTfit.qme}}, \code{\link{BMTfit.mle}},
 #'  \code{\link{BMTfit.mpse}} and \code{\link{BMTfit.mqde}} for other estimation
 #'  methods. See \code{\link{optim}} and \code{\link{constrOptim}} for
-#'  optimization routines. See \code{\link{BMTfit}} and \code{\link{fitdist}}
-#'  for functions that return an objetc of class \code{"fitdist"}.
+#'  optimization routines. See \code{\link{BMTfit}} and \code{\link[fitdistrplus]{fitdist}}
+#'  for functions that return an object of class \code{"fitdist"}.
 #'  
 #'@author Camilo Jose Torres-Jimenez [aut,cre] \email{cjtorresj@unal.edu.co}
 #'  
-#'@source Based on the function \code{\link{mgedist}} of the R package: 
-#'  \code{\link{fitdistrplus}}
+#'@source Based on the function \code{\link[fitdistrplus]{mgedist}} of the R package: 
+#'  \pkg{fitdistrplus}
 #'  
 #'  Delignette-Muller ML and Dutang C (2015), \emph{fitdistrplus: An R Package 
 #'  for Fitting Distributions}. Journal of Statistical Software, 64(4), 1-34.
@@ -154,7 +153,7 @@
 
 #####################
 #' @rdname BMTfit.mge
-#' @export BMTfit.mge
+#' @export
 BMTfit.mge <- function(data, gof = "CvM", 
                        start = list(p3 = 0.5, p4 = 0.5, p1 = min(data) - 0.1, p2 = max(data) + 0.1),
                        fix.arg = NULL, type.p.3.4 = "t w", type.p.1.2 = "c-d",

@@ -4,20 +4,32 @@
 \alias{mqdedist}
 \title{Minimum Quantile Distance Fit of Univariate Distributions.}
 \source{
-Based on the function mledist of the R package: fitdistrplus
+Based on the function mledist of the R package: \pkg{fitdistrplus}
   
   Delignette-Muller ML and Dutang C (2015), \emph{fitdistrplus: An R Package 
   for Fitting Distributions}. Journal of Statistical Software, 64(4), 1-34.
   
-  Functions \code{checkparam} and \code{start.arg.default} are needed and 
+  Functions \code{checkparam} and \code{startargdefault} are needed and 
   were copied from the same package (fitdistrplus version: 1.0-9).
 }
 \usage{
-mqdedist(data, distr, probs = (1:length(data) - 0.5)/length(data),
-  qtype = 5, dist = "euclidean", start = NULL, fix.arg = NULL,
-  optim.method = "default", lower = -Inf, upper = Inf,
-  custom.optim = NULL, weights = NULL, silent = TRUE, gradient = NULL,
-  ...)
+mqdedist(
+  data,
+  distr,
+  probs = (1:length(data) - 0.5)/length(data),
+  qtype = 5,
+  dist = "euclidean",
+  start = NULL,
+  fix.arg = NULL,
+  optim.method = "default",
+  lower = -Inf,
+  upper = Inf,
+  custom.optim = NULL,
+  weights = NULL,
+  silent = TRUE,
+  gradient = NULL,
+  ...
+)
 }
 \arguments{
 \item{data}{A numeric vector with the observed values for non-censored data.}
@@ -42,7 +54,7 @@ to be used. This must be one of "euclidean" (default), "maximum", or
 named distribution or a function of data computing initial values and 
 returning a named list. This argument may be omitted (default) for some 
 distributions for which reasonable starting values are computed (see the 
-'details' section of \code{\link{mledist}}).}
+'details' section of \code{\link[fitdistrplus]{mledist}}).}
 
 \item{fix.arg}{An optional named list giving the values of fixed parameters 
 of the named distribution or a function of data computing (fixed) parameter
@@ -67,7 +79,7 @@ process. Should be \code{NULL} or a numeric vector with strictly positive
 numbers. If non-\code{NULL}, weighted mqde is used, otherwise ordinary 
 mqde.}
 
-\item{silent}{A logical to remove or show warnings when bootstraping.}
+\item{silent}{A logical to remove or show warnings when bootstrapping.}
 
 \item{gradient}{A function to return the gradient of the optimization 
 objective function for the \code{"BFGS"}, \code{"CG"} and \code{"L-BFGS-B"}
@@ -120,7 +132,7 @@ used, see \code{\link{optim}}.}
   \item{fix.arg.fun}{the function used to set the value of \code{fix.arg} or
   \code{NULL}.}
   
-  \item{weights}{the vector of weigths used in the estimation process or 
+  \item{weights}{the vector of weights used in the estimation process or 
   \code{NULL}.}
   
   \item{counts}{A two-element integer vector giving the number of calls to
@@ -145,16 +157,16 @@ The \code{mqdedist} function carries out the minimum quantile
   observed and theoretical quantiles.
   
   The optimization process is the same as 
-  \code{\link{mledist}}, see the 'details' section of that 
+  \code{\link[fitdistrplus]{mledist}}, see the 'details' section of that 
   function.
   
   Optionally, a vector of \code{weights} can be used in the fitting process. 
-  By default (when \code{weigths=NULL}), ordinary mqde is carried out, 
+  By default (when \code{weights=NULL}), ordinary mqde is carried out, 
   otherwise the specified weights are used to compute a weighted distance.
   
   We believe this function should be added to the package 
-  \code{\link{fitdistrplus}}. Until it is accepted and incorporated into that
-  package, it will remain in the package \code{\link{BMT}}. This function is 
+  \pkg{fitdistrplus}. Until it is accepted and incorporated into that
+  package, it will remain in the package \pkg{BMT}. This function is 
   internally called in \code{\link{BMTfit.mqde}}.
 }
 \examples{
@@ -210,9 +222,9 @@ LaRiccia, V. N. (1982). \emph{Asymptotic Properties of Weighted
   for the BMT distribution}. ArXiv e-prints.
 }
 \seealso{
-\code{\link{mpsedist}}, \code{\link{mledist}}, 
-  \code{\link{mmedist}}, \code{\link{qmedist}}, 
-  \code{\link{mgedist}}, \code{\link{optim}}, 
+\code{\link{mpsedist}}, \code{\link[fitdistrplus]{mledist}}, 
+  \code{\link[fitdistrplus]{mmedist}}, \code{\link[fitdistrplus]{qmedist}}, 
+  \code{\link[fitdistrplus]{mgedist}}, \code{\link{optim}}, 
   \code{\link{constrOptim}}, and \code{\link{quantile}}.
 }
 \author{

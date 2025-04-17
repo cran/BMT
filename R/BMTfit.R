@@ -6,11 +6,10 @@
 #'   spacing (mpse), also called maximum spacing, and minimum quantile distance 
 #'   (mqde), which can also be called maximum quantile goodness-of-fit.
 #'   
-#' @rdname BMTfit
 #' @name BMTfit
 #'   
-#' @details This function is based on the function \code{\link{fitdist}} from 
-#'   the package \code{\link{fitdistrplus}} but it focuses on the parameter 
+#' @details This function is based on the function \code{\link[fitdistrplus]{fitdist}} 
+#'   but it focuses on the parameter 
 #'   estimation for the BMT distribution (see \code{\link{BMT}} for details). It
 #'   has six possible fitting methods: maximum likelihood (mle), moment matching
 #'   (mme), quantile matching (qme), maximum goodness-of-fit (mge), also known 
@@ -21,11 +20,11 @@
 #'   \code{\link{BMTfit.qme}}, \code{\link{BMTfit.mge}}, 
 #'   \code{\link{BMTfit.mpse}}, and \code{\link{BMTfit.mqde}}, respectively (see
 #'   each function for details). \code{BMTfit} returns an object of class 
-#'   \code{"fitdist"} (see \code{\link{fitdist}} for details). Therefore, it 
+#'   \code{"fitdist"} (see \code{\link[fitdistrplus]{fitdist}} for details). Therefore, it 
 #'   benefits of all the developed functions and methods for that class (see 
-#'   \code{\link{fitdistrplus}} for details).
+#'   \code{\link[fitdistrplus]{fitdistrplus}} for details).
 #'   
-#'   Generic methods of a \code{\link{fitdist}} object are \code{print}, 
+#'   Generic methods of a \code{\link[fitdistrplus]{fitdist}} object are \code{print}, 
 #'   \code{plot}, \code{summary}, \code{quantile}, \code{logLik}, \code{vcov} 
 #'   and \code{coef}.
 #'   
@@ -39,23 +38,23 @@
 #' @param start A named list giving the initial values of parameters of the BMT 
 #'   distribution or a function of data computing initial values and returning a
 #'   named list. (see the 'details' section of 
-#'   \code{\link{mledist}}).
+#'   \code{\link[fitdistrplus]{mledist}}).
 #' @param fix.arg An optional named list giving the values of fixed parameters 
 #'   of the BMT distribution or a function of data computing (fixed) parameter 
 #'   values and returning a named list. Parameters with fixed value are thus NOT
 #'   estimated. (see the 'details' section of 
-#'   \code{\link{mledist}}).
-#' @param type.p.3.4 Type of parametrization asociated to p3 and p4. "t w" means
+#'   \code{\link[fitdistrplus]{mledist}}).
+#' @param type.p.3.4 Type of parametrization associated to p3 and p4. "t w" means
 #'   tails weights parametrization (default) and "a-s" means asymmetry-steepness
 #'   parametrization.
-#' @param type.p.1.2 Type of parametrization asociated to p1 and p2. "c-d" means
+#' @param type.p.1.2 Type of parametrization associated to p1 and p2. "c-d" means
 #'   domain parametrization (default) and "l-s" means location-scale 
 #'   parametrization.
 #' @param optim.method \code{"default"} (see the 'details' section of 
-#'   \code{\link{mledist}}) or optimization method to pass to 
+#'   \code{\link[fitdistrplus]{mledist}}) or optimization method to pass to 
 #'   \code{\link{optim}}.
 #' @param custom.optim A function carrying the optimization (see the 'details' 
-#'   section of \code{\link{mledist}}).
+#'   section of \code{\link[fitdistrplus]{mledist}}).
 #' @param keepdata A logical. If \code{TRUE}, dataset is returned, otherwise 
 #'   only a sample subset is returned.
 #' @param keepdata.nb When \code{keepdata=FALSE}, the length (>1) of the subset 
@@ -110,16 +109,16 @@
 #'   \code{NULL}.}
 #'   
 #'   \item{discrete}{ the input argument or the automatic definition by the 
-#'   function to be passed to functions \code{\link{gofstat}}, 
-#'   \code{\link{plotdist}} and \code{\link{cdfcomp}}. }
+#'   function to be passed to functions \code{\link[fitdistrplus]{gofstat}}, 
+#'   \code{\link[fitdistrplus]{plotdist}} and \code{\link[fitdistrplus]{cdfcomp}}. }
 #'   
 #'   \item{dots}{ the list of  further arguments passed in \dots to be used in 
-#'   \code{\link{bootdist}} in iterative calls to \code{\link{mledist}}, 
-#'   \code{\link{mmedist}}, \code{\link{qmedist}}, \code{\link{mgedist}},
+#'   \code{\link[fitdistrplus]{bootdist}} in iterative calls to \code{\link[fitdistrplus]{mledist}}, 
+#'   \code{\link[fitdistrplus]{mmedist}}, \code{\link[fitdistrplus]{qmedist}}, \code{\link[fitdistrplus]{mgedist}},
 #'   \code{\link{mpsedist}}, \code{\link{mqdedist}} or \code{NULL} if no such
 #'   arguments.}
 #'   
-#'   \item{weights}{the vector of weigths used in the estimation process or 
+#'   \item{weights}{the vector of weights used in the estimation process or 
 #'   \code{NULL}.}
 #'   
 #' @references Torres-Jimenez, C. J. (2017, September), \emph{Comparison of 
@@ -135,15 +134,15 @@
 #'   \code{\link{BMTfit.mme}}, \code{\link{BMTfit.qme}}, 
 #'   \code{\link{BMTfit.mge}}, \code{\link{BMTfit.mpse}} and 
 #'   \code{\link{BMTfit.mqde}} for details on parameter estimation. See 
-#'   \code{\link{fitdist}} for details on the object fitdist and its methods 
+#'   \code{\link[fitdistrplus]{fitdist}} for details on the object fitdist and its methods 
 #'   \code{print}, \code{plot}, \code{summary}, \code{quantile}, \code{logLik}, 
-#'   \code{vcov} and \code{coef}, and \code{\link{fitdistrplus}} for an overview
+#'   \code{vcov} and \code{coef}, and \pkg{fitdistrplus} for an overview
 #'   of the package to which that object belongs to.
 #'   
 #' @author Camilo Jose Torres-Jimenez [aut,cre] \email{cjtorresj@unal.edu.co}
 #'   
-#' @source Based on the function \code{\link{fitdist}} of the R package: 
-#'   \code{\link{fitdistrplus}}
+#' @source Based on the function \code{\link[fitdistrplus]{fitdist}} of the R package: 
+#'   \pkg{fitdistrplus}
 #'   
 #'   Delignette-Muller ML and Dutang C (2015), \emph{fitdistrplus: An R Package 
 #'   for Fitting Distributions}. Journal of Statistical Software, 64(4), 1-34.
@@ -204,12 +203,12 @@
 #' @keywords distribution
 
 #################
-#' @rdname BMTfit
-#' @export BMTfit
 #' @import stats
 #' @import utils
 #' @import partitions
 #' @import fitdistrplus
+#' @rdname BMTfit
+#' @export 
 BMTfit <- function(data, method = c("mle","mme","qme","mge","mpse","mqde"),
                    start = list(p3 = 0.5, p4 = 0.5, p1 = min(data) - 0.1, p2 = max(data) + 0.1),
                    fix.arg = NULL, type.p.3.4 = "t w", type.p.1.2 = "c-d",

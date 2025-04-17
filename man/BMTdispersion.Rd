@@ -16,22 +16,22 @@ BMTiqr(p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d")
 \arguments{
 \item{p3, p4}{tails weights (\eqn{\kappa_l} and \eqn{\kappa_r}) or 
 asymmetry-steepness (\eqn{\zeta} and \eqn{\xi}) parameters of the BMT 
-ditribution.}
+distribution.}
 
-\item{type.p.3.4}{type of parametrization asociated to p3 and p4. "t w" means
+\item{type.p.3.4}{type of parametrization associated to p3 and p4. "t w" means
 tails weights parametrization (default) and "a-s" means asymmetry-steepness
 parametrization.}
 
 \item{p1, p2}{domain (minimum and maximum) or location-scale (mean and 
-standard deviation) parameters of the BMT ditribution.}
+standard deviation) parameters of the BMT distribution.}
 
-\item{type.p.1.2}{type of parametrization asociated to p1 and p2. "c-d" means
+\item{type.p.1.2}{type of parametrization associated to p1 and p2. "c-d" means
 domain parametrization (default) and "l-s" means location-scale 
 parametrization.}
 }
 \value{
 \code{BMTvar} gives the variance, \code{BMTsd} the standard deviation
-  and \code{BMTiqr} the interquantile range for the BMT distribution.
+  and \code{BMTiqr} the interquartile range for the BMT distribution.
   
   The arguments are recycled to the length of the result. Only the first 
   elements of \code{type.p.3.4} and \code{type.p.1.2} are used.
@@ -51,7 +51,7 @@ parametrization.}
   \code{NaN}.
 }
 \description{
-Variance, standard deviation and interquantile range for the BMT
+Variance, standard deviation and interquartile range for the BMT
   distribution, with \code{p3} and \code{p4} tails weights (\eqn{\kappa_l} 
   and \eqn{\kappa_r}) or asymmetry-steepness parameters (\eqn{\zeta} and 
   \eqn{\xi}) and \code{p1} and \code{p2} domain (minimum and maximum) or 
@@ -89,7 +89,7 @@ BMTiqr(0.5, 0.5, "a-s", 0, 1, "l-s")
 \references{
 Torres-Jimenez, C. J. and Montenegro-Diaz, A. M. (2017, September), 
   \emph{An alternative to continuous univariate distributions supported on a 
-  bounded interval: The BMT distribution}. ArXiv e-prints.
+  bounded interval: The BMT distribution}. ArXiv e-prints. \url{https://arxiv.org/abs/1709.05534}.
   
   Torres-Jimenez, C. J. (2018), \emph{The BMT Item Response Theory model: A 
   new skewed distribution family with bounded domain and an IRT model based 

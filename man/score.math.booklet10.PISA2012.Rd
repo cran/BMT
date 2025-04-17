@@ -4,11 +4,12 @@
 \name{score.math.booklet10.PISA2012}
 \alias{score.math.booklet10.PISA2012}
 \title{A Performance Score in Mathematics from Booklet 10 of PISA 2012.}
-\format{\code{score.math.booklet10.PISA2012} is a vector.}
+\format{
+\code{score.math.booklet10.PISA2012} is a vector.
+}
 \source{
-OECD Programme for International Student Assesment (PISA) (2012). Database -
-PISA 2012. Online; accessed 2014-08-23. 
-\url{https://www.oecd.org/pisa/pisaproducts/pisa2012database-downloadabledata.htm}.
+OECD Programme for International Student Assessment (PISA) (2012). Database -
+PISA 2012. Online; accessed 2014-08-23.
 }
 \usage{
 data(score.math.booklet10.PISA2012)

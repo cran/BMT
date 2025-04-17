@@ -2,7 +2,7 @@
 #' @description Density, distribution function, quantile function, random number
 #'   generation for the BMT-Phi distribution with mean equal to \code{mean} and 
 #'   standard deviation equal to \code{sd}.
-#' @rdname BMT.Phi
+#' 
 #' @name BMT.Phi
 #' @aliases dBMT.Phi
 #' @aliases pBMT.Phi
@@ -18,7 +18,7 @@
 #'   
 #' @param x,q vector of quantiles.
 #' @param p vector of probabilities.
-#' @param n number of observations. If \code{length(n) > 1}, the lenght is taken
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken
 #'   to be the number required
 #' @param mean vector of means.
 #' @param sd vector of standard deviations.
@@ -69,7 +69,7 @@
 #' curve(dBMT.Phi(x), add = TRUE, col = "blue", lty = 3)
 
 #' @rdname BMT.Phi
-#' @export dBMT.Phi
+#' @export
 dBMT.Phi <- function(x, mean = 0, sd = 1, log = FALSE) {
   # The length of the result is determined by the maximum of the lengths of the
   # numerical arguments. The numerical arguments are recycled to the length of
@@ -106,7 +106,7 @@ dBMT.Phi <- function(x, mean = 0, sd = 1, log = FALSE) {
 }
 
 #' @rdname BMT.Phi
-#' @export pBMT.Phi
+#' @export 
 pBMT.Phi <- function(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE){
   # The length of the result is determined by the maximum of the lengths of the 
   # numerical arguments. The numerical arguments are recycled to the length of 
@@ -148,7 +148,7 @@ pBMT.Phi <- function(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE){
 }
 
 #' @rdname BMT.Phi
-#' @export qBMT.Phi
+#' @export 
 qBMT.Phi <- function(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE){
   # probabilities p are given as log(p)
   if(log.p)
@@ -193,7 +193,7 @@ qBMT.Phi <- function(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE){
 }
 
 #' @rdname BMT.Phi
-#' @export rBMT.Phi
+#' @export 
 rBMT.Phi <- function(n, mean = 0, sd = 1){
   # 
   len <- length(n)

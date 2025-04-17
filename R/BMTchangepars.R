@@ -4,6 +4,7 @@
 #'   and \eqn{\kappa_r}) or asymmetry-steepness parameters (\eqn{\zeta} and 
 #'   \eqn{\xi}) and \code{p1} and \code{p2} domain (minimum and maximum) or 
 #'   location-scale (mean and standard deviation) parameters.
+#' 
 #' @name BMTchangepars
 #' @aliases BMTchangepars
 #'   
@@ -22,16 +23,16 @@
 #' @param p3,p4 tails weights (\eqn{\kappa_l} and \eqn{\kappa_r}) or 
 #'   asymmetry-steepness (\eqn{\zeta} and \eqn{\xi}) parameters of the BMT 
 #'   distribution.
-#' @param type.p.3.4 type of parametrization asociated to p3 and p4. "t w" means
+#' @param type.p.3.4 type of parametrization associated to p3 and p4. "t w" means
 #'   tails weights parametrization (default) and "a-s" means asymmetry-steepness
 #'   parametrization.
 #' @param p1,p2 domain (minimum and maximum) or location-scale (mean and 
-#'   standard deviation) parameters of the BMT ditribution.
-#' @param type.p.1.2 type of parametrization asociated to p1 and p2. "c-d" means
+#'   standard deviation) parameters of the BMT distribution.
+#' @param type.p.1.2 type of parametrization associated to p1 and p2. "c-d" means
 #'   domain parametrization (default) and "l-s" means location-scale 
 #'   parametrization.
 #'   
-#' @return \code{BMTchangepars} reparametrizes \code{p3}, \code{p4}, \code{p1}, 
+#' @return \code{BMTchangepars} reparametrize \code{p3}, \code{p4}, \code{p1}, 
 #'   \code{p2} according to the alternative parameterizations from the given 
 #'   \code{type.p.3.4} and \code{type.p.1.2}. \code{BMTchangepars} returns a 
 #'   list with the alternative arguments to those received.
@@ -77,7 +78,7 @@
 #' parameters # Parameters of the BMT in the tail weight and domain parametrization
 
 #' @rdname BMTchangepars
-#' @export BMTchangepars
+#' @export 
 BMTchangepars <- function(p3, p4, type.p.3.4 = "t w", 
                           p1 = NULL, p2 = NULL, type.p.1.2 = NULL){
   # The length of the result is determined by the maximum of the lengths of the
@@ -102,7 +103,7 @@ BMTchangepars <- function(p3, p4, type.p.3.4 = "t w",
     stop("invalid type of parametrization for parameters 3 and 4")
   if (int.type.p.3.4 == -1) 
     stop("ambiguous type of parametrization for parameters 3 and 4")
-  # tail weigths or asymmetry-steepness parametrization
+  # tail weights or asymmetry-steepness parametrization
   if(int.type.p.3.4 == 1){ # tail weights parametrization
     # Control tail weights parameters
     kappa_l <- replace(p3, p3 < 0 | p3 > 1, NaN)

@@ -30,7 +30,7 @@ x]}, otherwise, \eqn{P[X > x]}.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the lenght is taken
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
 to be the number required}
 }
 \value{

@@ -8,14 +8,40 @@
 \alias{rBMT}
 \title{The BMT Distribution.}
 \usage{
-dBMT(x, p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d",
-  log = FALSE)
+dBMT(
+  x,
+  p3,
+  p4,
+  type.p.3.4 = "t w",
+  p1 = 0,
+  p2 = 1,
+  type.p.1.2 = "c-d",
+  log = FALSE
+)
 
-pBMT(q, p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d",
-  lower.tail = TRUE, log.p = FALSE)
+pBMT(
+  q,
+  p3,
+  p4,
+  type.p.3.4 = "t w",
+  p1 = 0,
+  p2 = 1,
+  type.p.1.2 = "c-d",
+  lower.tail = TRUE,
+  log.p = FALSE
+)
 
-qBMT(p, p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d",
-  lower.tail = TRUE, log.p = FALSE)
+qBMT(
+  p,
+  p3,
+  p4,
+  type.p.3.4 = "t w",
+  p1 = 0,
+  p2 = 1,
+  type.p.1.2 = "c-d",
+  lower.tail = TRUE,
+  log.p = FALSE
+)
 
 rBMT(n, p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d")
 }
@@ -26,14 +52,14 @@ rBMT(n, p3, p4, type.p.3.4 = "t w", p1 = 0, p2 = 1, type.p.1.2 = "c-d")
 asymmetry-steepness (\eqn{\zeta} and \eqn{\xi}) parameters of the BMT 
 distribution.}
 
-\item{type.p.3.4}{type of parametrization asociated to p3 and p4. "t w" means
+\item{type.p.3.4}{type of parametrization associated to p3 and p4. "t w" means
 tails weights parametrization (default) and "a-s" means asymmetry-steepness
 parametrization.}
 
 \item{p1, p2}{domain (minimum and maximum) or location-scale (mean and 
-standard deviation) parameters of the BMT ditribution.}
+standard deviation) parameters of the BMT distribution.}
 
-\item{type.p.1.2}{type of parametrization asociated to p1 and p2. "c-d" means
+\item{type.p.1.2}{type of parametrization associated to p1 and p2. "c-d" means
 domain parametrization (default) and "l-s" means location-scale 
 parametrization.}
 
@@ -44,7 +70,7 @@ x]}, otherwise, \eqn{P[X > x]}.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the lenght is taken
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
 to be the number required}
 }
 \value{
@@ -152,7 +178,7 @@ max(abs(Q3 - Q4))
 \references{
 Torres-Jimenez, C. J. and Montenegro-Diaz, A. M. (2017, September), 
   \emph{An alternative to continuous univariate distributions supported on a 
-  bounded interval: The BMT distribution}. ArXiv e-prints.
+  bounded interval: The BMT distribution}. ArXiv e-prints. \url{https://arxiv.org/abs/1709.05534}.
   
   Torres-Jimenez, C. J. (2017, September), \emph{Comparison of estimation methods 
   for the BMT distribution}. ArXiv e-prints.

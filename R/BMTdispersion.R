@@ -1,10 +1,10 @@
 #' @title The BMT Distribution Descriptive Measures - Dispersion.
-#' @description Variance, standard deviation and interquantile range for the BMT
+#' @description Variance, standard deviation and interquartile range for the BMT
 #'   distribution, with \code{p3} and \code{p4} tails weights (\eqn{\kappa_l} 
 #'   and \eqn{\kappa_r}) or asymmetry-steepness parameters (\eqn{\zeta} and 
 #'   \eqn{\xi}) and \code{p1} and \code{p2} domain (minimum and maximum) or 
 #'   location-scale (mean and standard deviation) parameters.
-#' @rdname BMTdispersion
+#'
 #' @name BMTdispersion
 #' @aliases BMTvar
 #' @aliases BMTsd
@@ -14,18 +14,18 @@
 #'   
 #' @param p3,p4 tails weights (\eqn{\kappa_l} and \eqn{\kappa_r}) or 
 #'   asymmetry-steepness (\eqn{\zeta} and \eqn{\xi}) parameters of the BMT 
-#'   ditribution.
-#' @param type.p.3.4 type of parametrization asociated to p3 and p4. "t w" means
+#'   distribution.
+#' @param type.p.3.4 type of parametrization associated to p3 and p4. "t w" means
 #'   tails weights parametrization (default) and "a-s" means asymmetry-steepness
 #'   parametrization.
 #' @param p1,p2 domain (minimum and maximum) or location-scale (mean and 
-#'   standard deviation) parameters of the BMT ditribution.
-#' @param type.p.1.2 type of parametrization asociated to p1 and p2. "c-d" means
+#'   standard deviation) parameters of the BMT distribution.
+#' @param type.p.1.2 type of parametrization associated to p1 and p2. "c-d" means
 #'   domain parametrization (default) and "l-s" means location-scale 
 #'   parametrization.
 #'   
 #' @return \code{BMTvar} gives the variance, \code{BMTsd} the standard deviation
-#'   and \code{BMTiqr} the interquantile range for the BMT distribution.
+#'   and \code{BMTiqr} the interquartile range for the BMT distribution.
 #'   
 #'   The arguments are recycled to the length of the result. Only the first 
 #'   elements of \code{type.p.3.4} and \code{type.p.1.2} are used.
@@ -46,7 +46,7 @@
 #'   
 #' @references Torres-Jimenez, C. J. and Montenegro-Diaz, A. M. (2017, September), 
 #'   \emph{An alternative to continuous univariate distributions supported on a 
-#'   bounded interval: The BMT distribution}. ArXiv e-prints.
+#'   bounded interval: The BMT distribution}. ArXiv e-prints. \url{https://arxiv.org/abs/1709.05534}.
 #'   
 #'   Torres-Jimenez, C. J. (2018), \emph{The BMT Item Response Theory model: A 
 #'   new skewed distribution family with bounded domain and an IRT model based 
@@ -86,7 +86,7 @@
 #' BMTiqr(0.5, 0.5, "a-s", 0, 1, "l-s")
 
 #' @rdname BMTdispersion
-#' @export BMTvar
+#' @export 
 BMTvar <- function(p3, p4, type.p.3.4 = "t w", 
                    p1 = 0, p2 = 1, type.p.1.2 = "c-d"){
   # The length of the result is determined by the maximum of the lengths of the
@@ -117,7 +117,7 @@ BMTvar <- function(p3, p4, type.p.3.4 = "t w",
     min <- replace(p1, p1 >= p2, NaN)
     max <- replace(p2, p1 >= p2, NaN)
     range <- max - min
-    # tail weigths or asymmetry-steepness parametrization
+    # tail weights or asymmetry-steepness parametrization
     if(int.type.p.3.4 == 1){ # tail weights parametrization
       # Control tail weights parameters
       kappa_l <- replace(p3, p3 < 0 | p3 > 1, NaN)
@@ -145,7 +145,7 @@ BMTvar <- function(p3, p4, type.p.3.4 = "t w",
 }
 
 #' @rdname BMTdispersion
-#' @export BMTsd
+#' @export
 BMTsd <- function(p3, p4, type.p.3.4 = "t w", 
                   p1 = 0, p2 = 1, type.p.1.2 = "c-d"){
   m <- sqrt(BMTvar(p3, p4, type.p.3.4, p1, p2, type.p.1.2))
@@ -153,7 +153,7 @@ BMTsd <- function(p3, p4, type.p.3.4 = "t w",
 }
 
 #' @rdname BMTdispersion
-#' @export BMTiqr
+#' @export
 BMTiqr <- function(p3, p4, type.p.3.4 = "t w", 
                    p1 = 0, p2 = 1, type.p.1.2 = "c-d"){
   # The length of the result is determined by the maximum of the lengths of the
@@ -178,7 +178,7 @@ BMTiqr <- function(p3, p4, type.p.3.4 = "t w",
     stop("invalid type of parametrization for parameters 1 and 2")
   if (int.type.p.1.2 == -1) 
     stop("ambiguous type of parametrization for parameters 1 and 2")
-  # tail weigths or asymmetry-steepness parametrization
+  # tail weights or asymmetry-steepness parametrization
   if(int.type.p.3.4 == 1){ # tail weights parametrization
     # Control tail weights parameters
     kappa_l <- replace(p3, p3 < 0 | p3 > 1, NaN)
